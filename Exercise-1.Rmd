@@ -9,22 +9,26 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Data 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+For this transformation we will use a built-in R dataset, namely "sleep" reporting on the effect of two soporific drugs on a sample of 10 students. 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r loading data, message = F}
+library(tidyverse)
+data("sleep")
 ```
 
-## Including Plots
+## Transforming Data
 
-You can also embed plots, for example:
+We will now create a function to transform this data. We want the function to filter through the data to only show the effect on group 2.
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r function}
+only_group2 <- function(x){
+  x <- x %>% 
+    filter(group == 2)
+  return (x)
+}
+
+only_group2(sleep)
 ```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+The effect of the drug on the 2nd group results in an average increase of `r mean(only_group2(sleep)$extra)` hours of sleep.
