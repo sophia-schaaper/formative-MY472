@@ -395,10 +395,10 @@ increase of 2.33 hours of sleep.</p>
 <h2>New function</h2>
 <p>We now want create a second function to separate the effect on group
 1 this time.</p>
-<pre class="r"><code>only_group1 &lt;- function(data){
-  data &lt;- data %&gt;% 
+<pre class="r"><code>only_group1 &lt;- function(data_new){
+  data_new &lt;- data_new %&gt;% 
     filter(group == 1)
-  return (data)
+  return (data_new)
 }
 
 only_group1(sleep)</code></pre>
