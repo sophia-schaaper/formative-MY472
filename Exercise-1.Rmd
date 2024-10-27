@@ -32,3 +32,19 @@ only_group2 <- function(data){
 only_group2(sleep)
 ```
 The effect of the drug on the 2nd group results in an average increase of `r mean(only_group2(sleep)$extra)` hours of sleep.
+
+## New function
+
+We now want create a second function to separate the effect on group 1 this time.
+
+```{r another function}
+only_group1 <- function(data){
+  data <- data %>% 
+    filter(group == 1)
+  return (data)
+}
+
+only_group1(sleep)
+```
+
+The effect of the drug on the 1st group results in an average increase of `r mean(only_group1(sleep)$extra)` hours of sleep.
