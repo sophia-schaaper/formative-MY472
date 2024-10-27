@@ -38,10 +38,10 @@ The effect of the drug on the 2nd group results in an average increase of `r mea
 We now want create a second function to separate the effect on group 1 this time.
 
 ```{r another function}
-only_group1 <- function(data){
-  data <- data %>% 
+only_group1 <- function(data_new){
+  data_new <- data_new %>% 
     filter(group == 1)
-  return (data)
+  return (data_new)
 }
 
 only_group1(sleep)
