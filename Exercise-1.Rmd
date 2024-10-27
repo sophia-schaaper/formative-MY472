@@ -23,10 +23,10 @@ data("sleep")
 We will now create a function to transform this data. We want the function to filter through the data to only show the effect on group 2.
 
 ```{r function}
-only_group2 <- function(x){
-  x <- x %>% 
+only_group2 <- function(data){
+  data <- data %>% 
     filter(group == 2)
-  return (x)
+  return (data)
 }
 
 only_group2(sleep)

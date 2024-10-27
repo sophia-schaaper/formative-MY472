@@ -370,10 +370,10 @@ data(&quot;sleep&quot;)</code></pre>
 <p>We will now create a function to transform this data. We want the
 function to filter through the data to only show the effect on group
 2.</p>
-<pre class="r"><code>only_group2 &lt;- function(x){
-  x &lt;- x %&gt;% 
+<pre class="r"><code>only_group2 &lt;- function(data){
+  data &lt;- data %&gt;% 
     filter(group == 2)
-  return (x)
+  return (data)
 }
 
 only_group2(sleep)</code></pre>
